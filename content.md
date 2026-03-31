@@ -12,3 +12,10 @@ O número fica registado nos servidores da Meta
 Funciona independente de qualquer telemóvel
 ↓
 O cliente pode até não ter o telemóvel — não importa
+preciso trabalhar com horarios reais
+poste mais sobre X”
+“este conteúdo funciona melhor”
+“responda mais rápido clientes”
+“este produto está a gerar interesse”
+
+planos com beneficios de envio de fotos , catalogos , pdfs
