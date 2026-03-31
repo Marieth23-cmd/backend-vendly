@@ -34,6 +34,14 @@ wppconnect
     // Outras configurações
     headless: true,
     devtools: false,
+    puppeteerOptions: {
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-dev-shm-usage',
+        '--disable-gpu'
+      ]
+    }
   })
 
   // Inicia o cliente e passa para a função de start
