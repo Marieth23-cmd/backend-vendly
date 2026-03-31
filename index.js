@@ -1,5 +1,6 @@
 require('dotenv').config()
 const fs = require('fs')
+const puppeteer = require('puppeteer')
 
 const wppconnect = require('@wppconnect-team/wppconnect')
 const { perguntar } = require('./ia')
@@ -34,14 +35,21 @@ wppconnect
     // Outras configurações
     headless: true,
     devtools: false,
-    puppeteerOptions: {
-      args: [
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-        '--disable-dev-shm-usage',
-        '--disable-gpu'
-      ]
-    }
+    puppeteerOptions: (() => {
+      const options = {
+        args: [
+          '--no-sandbox',
+          '--disable-setuid-sandbox',
+          '--disable-dev-shm-usage',
+          '--disable-gpu'
+        ]
+      }
+      const chromePath = process.env.PUPPETEER_EXECUTABLE_PATH || puppeteer.executablePath()
+      if (chromePath) {
+        options.executablePath = chromePath
+      }
+      return options
+    })()
   })
 
   // Inicia o cliente e passa para a função de start
